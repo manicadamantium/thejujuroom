@@ -1,6 +1,6 @@
+@import "config";
 @import "mixins";
 @import "reset";
-@import "config";
 
 /* UTILITIES */
 @import "utilities/gap";
@@ -34,8 +34,8 @@
 }
 
 body {
-  color: hsl(var(--fg-default));
   background-color: hsl(var(--bg-primary));
+  color: hsl(var(--fg-default));
   font-family: var(--font-sans);
   font-size: var(--type-size);
 }
