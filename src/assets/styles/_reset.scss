@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* @docs
 label: Core Remedies
 version: 0.1.0-beta.2
@@ -9,6 +8,8 @@ note: |
 
 category: file
 */
+
+
 /* @docs
 label: Box Sizing
 
@@ -17,9 +18,8 @@ note: |
 
 category: global
 */
-*, ::before, ::after {
-  box-sizing: border-box;
-}
+*, ::before, ::after { box-sizing: border-box; }
+
 
 /* @docs
 label: Line Sizing
@@ -33,9 +33,8 @@ links:
 
 category: global
 */
-html {
-  line-sizing: normal;
-}
+html { line-sizing: normal; }
+
 
 /* @docs
 label: Body Margins
@@ -45,9 +44,8 @@ note: |
 
 category: global
 */
-body {
-  margin: 0;
-}
+body { margin: 0; }
+
 
 /* @docs
 label: Hidden Attribute
@@ -57,9 +55,8 @@ note: |
 
   category: global
 */
-[hidden] {
-  display: none;
-}
+[hidden] { display: none; }
+
 
 /* @docs
 label: Heading Sizes
@@ -69,29 +66,13 @@ note: |
 
 category: typography
 */
-h1 {
-  font-size: 2rem;
-}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.17rem; }
+h4 { font-size: 1.00rem; }
+h5 { font-size: 0.83rem; }
+h6 { font-size: 0.67rem; }
 
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.17rem;
-}
-
-h4 {
-  font-size: 1rem;
-}
-
-h5 {
-  font-size: 0.83rem;
-}
-
-h6 {
-  font-size: 0.67rem;
-}
 
 /* @docs
 label: H1 Margins
@@ -101,9 +82,8 @@ note: |
 
 category: typography
 */
-h1 {
-  margin: 0.67em 0;
-}
+h1 { margin: 0.67em 0; }
+
 
 /* @docs
 label: Pre Wrapping
@@ -113,9 +93,8 @@ note: |
 
 category: typography
 */
-pre {
-  white-space: pre-wrap;
-}
+pre { white-space: pre-wrap; }
+
 
 /* @docs
 label: Horizontal Rule
@@ -135,6 +114,7 @@ hr {
   overflow: visible;
 }
 
+
 /* @docs
 label: Responsive Embeds
 
@@ -151,10 +131,8 @@ img, svg, video, canvas, audio, iframe, embed, object {
   vertical-align: middle;
   max-width: 100%;
 }
+audio:not([controls]) { display:none; }
 
-audio:not([controls]) {
-  display: none;
-}
 
 /* @docs
 label: Responsive Images
@@ -169,13 +147,9 @@ note: |
 
 category: embedded elements
 */
-picture {
-  display: contents;
-}
+picture { display: contents; }
+source { display: none; }
 
-source {
-  display: none;
-}
 
 /* @docs
 label: Aspect Ratios
@@ -192,6 +166,7 @@ img, svg, video, canvas {
   height: auto;
 }
 
+
 /* @docs
 label: Audio Width
 
@@ -201,9 +176,7 @@ note: |
 
 category: embedded elements
 */
-audio {
-  width: 100%;
-}
+audio { width: 100%; }
 
 /* @docs
 label: Image Borders
@@ -213,9 +186,8 @@ note: |
 
 category: legacy browsers
 */
-img {
-  border-style: none;
-}
+img { border-style: none; }
+
 
 /* @docs
 label: SVG Overflow
@@ -225,9 +197,8 @@ note: |
 
 category: legacy browsers
 */
-svg {
-  overflow: hidden;
-}
+svg { overflow: hidden; }
+
 
 /* @docs
 label: HTML5 Elements
@@ -245,6 +216,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: block;
 }
 
+
 /* @docs
 label: Checkbox & Radio Inputs
 
@@ -254,8 +226,8 @@ note: |
 
 category: legacy browsers
 */
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -274,6 +246,8 @@ note: |
 
 category: file
 */
+
+
 /* @docs
 label: List Style
 
@@ -290,6 +264,7 @@ nav ul {
   list-style: none;
 }
 
+
 /* @docs
 label: List Voiceover
 
@@ -303,9 +278,10 @@ links:
 category: navigation
 */
 nav li:before {
-  content: "​";
+  content: "\200B";
   position: absolute;
 }
+
 
 /* @docs
 label: Reduced Motion
@@ -330,6 +306,8 @@ category: accessibility
     transition-duration: 0s !important;
   }
 }
+
+
 /* @docs
 label: Line Heights
 
@@ -355,73 +333,6 @@ todo: |
 
 category: typography
 */
-html {
-  line-height: 1.5;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.25;
-}
-
-caption, figcaption, label, legend {
-  line-height: 1.375;
-}
-
-/* COLORS */
-:root {
-  --d-contrast: 0 0% 0%;
-  --d-default: 0 0% 20%;
-  --d-subtle: 0 0% 50%;
-  --d-non-essential: 0 0% 75%;
-  --l-contrast: 0 0% 100%;
-  --l-default: 0 0% 80%;
-  --l-subtle: 0 0% 50%;
-  --l-non-essential: 0 0% 25%;
-  --primary-100: 10 55% 85%;
-  --primary-300: 10 85% 75%;
-  --primary-500: 10 85% 65%;
-  --primary-700: 10 85% 45%;
-  --primary-900: 10 85% 25%;
-  --secondary-100: 266 58% 82%;
-  --secondary-300: 266 58% 72%;
-  --secondary-500: 266 58% 52%;
-  --secondary-700: 266 58% 32%;
-  --secondary-900: 266 58% 22%;
-}
-
-:root {
-  --fg-contrast: var(--d-contrast);
-  --fg-default: var(--d-default);
-  --fg-subtle: var(--d-subtle);
-  --fg-non-essential: var(--d-non-essential);
-  --bg-primary: var(--l-contrast);
-  --bg-secondary: var(--l-default);
-  --bg-accent: var(--l-subtle);
-  --bg-exception: var(--l-non-essential);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fg-contrast: var(--l-contrast);
-    --fg-default: var(--l-default);
-    --fg-subtle: var(--l-subtle);
-    --fg-non-essential: var(--l-non-essential);
-    --bg-primary: var(--d-default);
-    --bg-secondary: var(--d-default);
-    --bg-accent: var(--d-subtle);
-    --bg-exception: var(--d-non-essential);
-  }
-}
-body {
-  color: hsl(var(--fg-default));
-  background-color: hsl(var(--bg-primary));
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: hsl(var(--fg-contrast));
-}
+html { line-height: 1.5; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.25; }
+caption, figcaption, label, legend { line-height: 1.375; }

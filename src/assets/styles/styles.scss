@@ -1,0 +1,43 @@
+@import "mixins";
+@import "reset";
+@import "config";
+
+:root {
+  --fg-contrast     : var(--d-contrast);
+  --fg-default      : var(--d-default);
+  --fg-subtle       : var(--d-subtle);
+  --fg-non-essential: var(--d-non-essential);
+
+  --bg-primary  : var(--l-contrast);
+  --bg-secondary: var(--l-default);
+  --bg-accent   : var(--l-subtle);
+  --bg-exception: var(--l-non-essential);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg-contrast     : var(--l-contrast);
+    --fg-default      : var(--l-default);
+    --fg-subtle       : var(--l-subtle);
+    --fg-non-essential: var(--l-non-essential);
+
+    --bg-primary  : var(--d-default);
+    --bg-secondary: var(--d-default);
+    --bg-accent   : var(--d-subtle);
+    --bg-exception: var(--d-non-essential);
+  }
+}
+
+body {
+  color           : hsl(var(--fg-default));
+  background-color: hsl(var(--bg-primary))
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(var(--fg-contrast));
+}
