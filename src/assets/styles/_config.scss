@@ -38,3 +38,19 @@
   --type-size-s2: 0.563rem;
   --type-size-s2: 0.422rem;
 }
+
+/* SPACES */
+:root {
+  --space-auto: auto;
+  --space-xxxl: 4rem;
+  --space-xxl: 3rem;
+  --space-xl: 2rem;
+  --space-l: 1.5rem;
+  --space: 1rem;
+  --space-s: 0.75rem;
+  --space-xs: 0.5rem;
+  --space-xxs: 0.25rem;
+  --space-xxxs: 0.1rem;
+  
+  --space-m: var(--space); /* ALIAS */
+}

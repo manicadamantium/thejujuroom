@@ -2,6 +2,11 @@
 @import "reset";
 @import "config";
 
+/* UTILITIES */
+@import "utilities/gap";
+@import "utilities/margin";
+@import "utilities/padding";
+
 :root {
   --fg-contrast: var(--d-contrast);
   --fg-default: var(--d-default);
