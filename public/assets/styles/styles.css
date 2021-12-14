@@ -389,6 +389,21 @@ caption, figcaption, label, legend {
   --secondary-900: 266 58% 22%;
 }
 
+/* FONTS */
+:root {
+  --font-display: "Staatliches", sans-serif;
+  --font-sans: "Quicksand", sans-serif;
+  --type-size-1: 4.209rem;
+  --type-size-2: 3.157rem;
+  --type-size-3: 2.369rem;
+  --type-size-4: 1.777rem;
+  --type-size-5: 1.333rem;
+  --type-size: 1rem;
+  --type-size-s1: 0.75rem;
+  --type-size-s2: 0.563rem;
+  --type-size-s2: 0.422rem;
+}
+
 :root {
   --fg-contrast: var(--d-contrast);
   --fg-default: var(--d-default);
@@ -415,6 +430,8 @@ caption, figcaption, label, legend {
 body {
   color: hsl(var(--fg-default));
   background-color: hsl(var(--bg-primary));
+  font-family: var(--font-sans);
+  font-size: var(--type-size);
 }
 
 h1,
@@ -424,4 +441,65 @@ h4,
 h5,
 h6 {
   color: hsl(var(--fg-contrast));
+  font-family: var(--font-display);
+}
+
+h1 {
+  font-size: var(--type-size-1);
+}
+
+h1.responsive {
+  font-size: clamp(
+      var(--type-size-2),
+      9vw,
+      var(--type-size-1)
+    );
+}
+
+h2 {
+  font-size: var(--type-size-2);
+}
+
+h2.responsive {
+  font-size: clamp(
+      var(--type-size-3),
+      8vw,
+      var(--type-size-2)
+    );
+}
+
+h3 {
+  font-size: var(--type-size-3);
+}
+
+h3.responsive {
+  font-size: clamp(
+      var(--type-size-4),
+      7vw,
+      var(--type-size-3)
+    );
+}
+
+h4 {
+  font-size: var(--type-size-4);
+}
+
+h4.responsive {
+  font-size: clamp(
+      var(--type-size-5),
+      6vw,
+      var(--type-size-4)
+    );
+}
+
+h5 {
+  font-size: var(--type-size-5);
+}
+
+h5.responsive {
+  font-size: clamp(
+      var(--type-size-6),
+      5vw,
+      var(--type-size-5)
+    );
 }
