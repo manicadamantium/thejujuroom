@@ -2,10 +2,23 @@
 @import "mixins";
 @import "reset";
 
+/* LAYOUTS */
+@import "layouts/box";
+@import "layouts/center";
+@import "layouts/cluster";
+@import "layouts/flex";
+@import "layouts/flow";
+@import "layouts/sidebar";
+@import "layouts/stack";
+
 /* UTILITIES */
+@import "utilities/alignment";
+@import "utilities/display";
 @import "utilities/gap";
 @import "utilities/margin";
 @import "utilities/padding";
+@import "utilities/text";
+@import "utilities/visibility";
 
 :root {
   --fg-contrast: var(--d-contrast);
@@ -36,7 +49,7 @@
 body {
   background-color: hsl(var(--bg-primary));
   color: hsl(var(--fg-default));
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--type-size);
 }
 

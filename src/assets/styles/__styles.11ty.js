@@ -5,6 +5,7 @@
 const ENTRY_FILE_NAME = 'critical.scss'
 const ENTRY_POINTS = {
   styles: 'styles.scss',
+  frontpage: 'frontpage.scss',
 }
 
 const path = require('path')

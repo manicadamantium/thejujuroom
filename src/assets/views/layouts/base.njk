@@ -10,10 +10,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Staatliches&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Quicksand:wght@400;700&family=Staatliches&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="/assets/styles/styles.css">
+
+    {% if css %}
+        {% for stylesheet in css %}
+            <link rel="stylesheet" href="/assets/styles/{{ stylesheet }}.css">
+        {% endfor %}
+    {% endif %}
 </head>
 <body>
-    {{ content | safe }}
+    <main id="main" tabindex="-1">
+        {{ content | safe }}
+    </main>
 </body>
 </html>

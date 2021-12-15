@@ -4,7 +4,7 @@ module.exports = {
   // },
 
   images: function () {
-    return { 'src/assets/images': 'images' }
+    return { 'src/assets/images': 'assets/images' }
   },
 
   fonts: function () {

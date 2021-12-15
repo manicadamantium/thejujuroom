@@ -1,10 +1,10 @@
-$spaces: xxxl, xl, l, m, s, xs, xxs, xxxs;
+$spaces: none, xxxl, xl, l, m, s, xs, xxs, xxxs;
 $directions: row, column;
 
 .gap {
   @each $size in $spaces {
     &--#{$size} {
-      gap: var(--space#{$size});
+      gap: var(--space-#{$size});
     }
   }
 }
@@ -13,7 +13,7 @@ $directions: row, column;
   .#{$d}-gap {
     @each $size in $spaces {
       &--#{$size} {
-        #{$d}-gap: var(--space#{$size});
+        #{$d}-gap: var(--space-#{$size});
       }
     }
   }

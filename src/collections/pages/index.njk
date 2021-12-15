@@ -1,22 +1,21 @@
 ---
 permalink: /
 layout: base.njk
+css: ['frontpage']
 ---
 
-<h1 class="responsive">{{ site.title | safe }}</h1>
-<h2 class="responsive">{{ site.title | safe }}</h2>
-<h3 class="responsive">{{ site.title | safe }}</h3>
-<h4 class="responsive">{{ site.title | safe }}</h4>
-<h5 class="responsive">{{ site.title | safe }}</h5>
+<header id="header-1" class="padding--m">
+    <p class="nav-text">Free shipping across Canada</p>
+    <nav class="nav-list">
+        <ul class="cluster gap--m margin--none">
+            <li><a href="">{{ 'mail' | icon | safe }} <span class="visually-hidden">Email</span></a></li>
+            <li><a href="">{{ 'facebook' | icon | safe }} <span class="visually-hidden">Facebook</span></a></li>
+            <li><a href="">{{ 'instagram' | icon | safe }} <span class="visually-hidden">Instagram</span></a></li>
+        </ul>
+    </nav>
+</header>
 
-<p style="font-weight: bold; color: hsl(var(--primary-100));">Primary 100</p>
-<p style="font-weight: bold; color: hsl(var(--primary-300));">Primary 300</p>
-<p style="font-weight: bold; color: hsl(var(--primary-500));">Primary 500</p>
-<p style="font-weight: bold; color: hsl(var(--primary-700));">Primary 700</p>
-<p style="font-weight: bold; color: hsl(var(--primary-900));">Primary 900</p>
-
-<p style="font-weight: bold; color: hsl(var(--secondary-100));">Secondary 100</p>
-<p style="font-weight: bold; color: hsl(var(--secondary-300));">Secondary 300</p>
-<p style="font-weight: bold; color: hsl(var(--secondary-500));">Secondary 500</p>
-<p style="font-weight: bold; color: hsl(var(--secondary-700));">Secondary 700</p>
-<p style="font-weight: bold; color: hsl(var(--secondary-900));">Secondary 900</p>
+<section id="section-1" class="full-height padding--l">
+    <h1 class="site-title">The<br>Juju<br>Room</h1>
+    <p>At The Juju Room, we believe in the power of Psilocybin and its wonderful effects on mental health. We take great pride in building a community by offering innovative products and advocating for our industry.</p>
+</section>

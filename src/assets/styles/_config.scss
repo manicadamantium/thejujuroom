@@ -26,21 +26,24 @@
 /* FONTS */
 :root {
   --font-display: "Staatliches", sans-serif;
-  --font-sans: "Quicksand", sans-serif;
+  --font-body: "Quicksand", sans-serif;
+  --font-sans: "Inter", sans-serif;
 
+  --type-size: 1rem;
   --type-size-1: 4.209rem;
   --type-size-2: 3.157rem;
   --type-size-3: 2.369rem;
   --type-size-4: 1.777rem;
   --type-size-5: 1.333rem;
-  --type-size: 1rem;
-  --type-size-s1: 0.75rem;
-  --type-size-s2: 0.563rem;
-  --type-size-s2: 0.422rem;
+  --type-size-6: 1rem;
+  --type-size-7: 0.75rem;
+  --type-size-8: 0.563rem;
+  --type-size-9: 0.422rem;
 }
 
 /* SPACES */
 :root {
+  --space-none: 0;
   --space-auto: auto;
   --space-xxxl: 4rem;
   --space-xxl: 3rem;

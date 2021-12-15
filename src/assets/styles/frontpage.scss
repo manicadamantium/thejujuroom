@@ -1,0 +1,44 @@
+.site-title {
+  -webkit-text-stroke: 2px hsl(var(--fg-contrast));
+  color: transparent;
+  text-align: center;
+}
+
+#header-1 {
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+}
+
+#header-1 > * {
+  grid-column: 1;
+
+  @media (min-width: 401px) {
+    grid-row: 1;
+  }
+}
+
+.nav-text {
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: var(--type-size-7);
+  align-self: center;
+  margin: 0;
+
+  @media (min-width: 720px) {
+    text-align: center;
+  }
+}
+
+.nav-list {
+  display: flex;
+
+  @media (min-width: 401px) {
+    justify-content: flex-end;
+  }
+}
