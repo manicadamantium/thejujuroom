@@ -41,4 +41,46 @@
   @media (min-width: 401px) {
     justify-content: flex-end;
   }
+
+  a {
+    color: hsl(var(--l-contrast) / 80%);
+  }
+}
+
+#section-1 {
+  --fg-contrast: var(--l-contrast);
+  --fg-default: var(--l-default);
+
+  background-color: hsl(var(--primary-500));
+  background-image: url("/assets/images/blobs.svg"),
+    linear-gradient(
+      to bottom right,
+      hsl(var(--primary-500)),
+      hsl(var(--secondary-500))
+    );
+  color: hsl(var(--fg-default));
+  display: grid;
+  place-items: center;
+  background-size: 100% 100%, cover;
+  background-position: right -200px bottom -170px, center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 720px) {
+  #section-1 > div {
+    justify-self: start;
+    width: 70%;
+    max-width: 45ch;
+    padding: var(--space-l);
+
+    .site-title {
+      width: fit-content;
+      margin: 0;
+      padding: var(--space-l);
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
 }
