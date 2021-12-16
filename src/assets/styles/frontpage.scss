@@ -6,7 +6,7 @@
 body {
   overflow: auto;
   height: 100vh;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 body section {
@@ -62,6 +62,10 @@ body section {
   }
 }
 
+#section-1 {
+  display: grid;
+}
+
 #section-2,
 #section-1 {
   --fg-contrast: var(--l-contrast);
@@ -75,7 +79,6 @@ body section {
       hsl(var(--secondary-500))
     );
   color: hsl(var(--fg-default));
-  display: grid;
   place-items: center;
   background-size: 900px, cover;
   background-position: right -170px bottom -270px, center;
@@ -124,4 +127,13 @@ body section {
 
 #section-4 {
   background-image: linear-gradient(to bottom right, #ff964d, #ffc84e);
+}
+
+.with-sidebar {
+  align-items: center;
+}
+
+.sidebar {
+  --sidebar-width: 65ch;
+  padding: var(--space-l);
 }
