@@ -12,6 +12,8 @@
   position: relative;
   text-decoration: none;
   text-transform: lowercase;
+  width: -moz-fit-content;
+  width: fit-content;
 
   &::after,
   &::before {
@@ -44,4 +46,8 @@
 .button.expanding::after {
   --size: 10rem;
   opacity: 0;
+}
+
+.button.expanding:hover::before {
+    opacity: 0;
 }

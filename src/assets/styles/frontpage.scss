@@ -101,11 +101,27 @@ body section {
   }
 }
 
-#section-2 {
+.side-by-side {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(65ch, 1fr));
   gap: var(--space-l);
+  align-items: center;
+}
+
+#section-2 {
   background-image: linear-gradient(to top left, #7c3fcc, #7d7483);
   background-size: cover;
   background-position: center;
+}
+
+#section-3 {
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(var(--primary-500)),
+    hsl(var(--primary-100))
+  );
+}
+
+#section-4 {
+  background-image: linear-gradient(to bottom right, #ff964d, #ffc84e);
 }
