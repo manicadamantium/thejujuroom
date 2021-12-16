@@ -1,0 +1,47 @@
+.button {
+  background: transparent;
+  border: 1px solid;
+  color: hsl(var(--fg-contrast));
+  cursor: pointer;
+  display: block;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: normal;
+  overflow: clip;
+  padding: var(--space-s) var(--space-l);
+  position: relative;
+  text-decoration: none;
+  text-transform: lowercase;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    --size: 0rem;
+    background-color: hsl(var(--fg-contrast) / 25%);
+    top: calc(50% - var(--size) / 2);
+    left: calc(50% - var(--size) / 2);
+    border-radius: var(--size);
+    transition: width, height, top, left, border-radius, opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 100ms, 100ms, 100ms, 100ms, 100ms, 500ms;
+    transition-delay: 0ms, 0ms, 0ms, 0ms, 0ms, 200ms;
+  }
+
+  &::after {
+    background-color: hsl(var(--primary-500) / 50%);
+    transition-duration: 100ms, 100ms, 100ms, 200ms, 200ms, 500ms;
+    transition-delay: 0ms, 0ms, 0ms, 0ms, 0ms, 200ms;
+  }
+
+  &:hover::before {
+    --size: 10rem;
+  }
+}
+
+.button.expanding::after {
+  --size: 10rem;
+  opacity: 0;
+}

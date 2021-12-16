@@ -1,3 +1,18 @@
+:root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  overflow: auto;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+
+body section {
+  scroll-snap-align: start;
+}
+
 .site-title {
   -webkit-text-stroke: 2px hsl(var(--fg-contrast));
   color: transparent;
@@ -47,6 +62,7 @@
   }
 }
 
+#section-2,
 #section-1 {
   --fg-contrast: var(--l-contrast);
   --fg-default: var(--l-default);
@@ -61,8 +77,8 @@
   color: hsl(var(--fg-default));
   display: grid;
   place-items: center;
-  background-size: 100% 100%, cover;
-  background-position: right -200px bottom -170px, center;
+  background-size: 900px, cover;
+  background-position: right -170px bottom -270px, center;
   background-repeat: no-repeat;
 }
 
@@ -83,4 +99,13 @@
       text-align: justify;
     }
   }
+}
+
+#section-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(65ch, 1fr));
+  gap: var(--space-l);
+  background-image: linear-gradient(to top left, #7c3fcc, #7d7483);
+  background-size: cover;
+  background-position: center;
 }
