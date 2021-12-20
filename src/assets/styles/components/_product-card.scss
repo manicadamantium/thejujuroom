@@ -48,3 +48,20 @@
 .card:target {
   animation: ripple 300ms 2 ease-in-out;
 }
+
+.card.selected {
+  position: relative;
+  border: 2px solid hsl(var(--primary-500));
+}
+
+.card.selected::before {
+  content: attr(data-quantity) " pcs";
+  background-color: hsl(var(--primary-500));
+  position: absolute;
+  color: hsl(var(--l-contrast));
+  padding: var(--space) var(--space-s);
+  top: var(--space-xs);
+  left: var(--space-xs);
+  line-height: 0;
+  border-radius: 5ch;
+}

@@ -26,8 +26,21 @@ $$("[data-product-grid]").forEach((section) => {
       const quantity = input.value
       const productID = input.dataset.updateCart
 
+      if (quantity > 10 || quantity < 0) {
+        alert("Maximum of 10 items per product only")
+        return
+      }
+
       if (quantity && productID) {
         shoppingCart.addItem({ id: productID, quantity })
+
+        if (quantity > 0) {
+          input.closest(".card").classList.add("selected");
+          input.closest(".card").dataset.quantity = quantity;
+        } else {
+          input.closest(".card").classList.remove("selected")
+          delete input.closest(".card").dataset.quantity
+        }
       }
     }
   });

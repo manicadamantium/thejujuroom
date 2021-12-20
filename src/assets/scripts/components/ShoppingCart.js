@@ -60,7 +60,7 @@ function render(cart) {
 
   removeAllChildren(cart._UI.list)
 
-  cart.list.filter(item => item.quantity).forEach((item) => {
+  cart.list.filter(item => item.quantity && item.quantity > 0).forEach((item) => {
     const li = createElement("li");
     li.classList.add("cart-item");
     li.innerHTML = `<span class="cart-item__name"><a href="#${item.id}">${item.name}</a> &times ${item.quantity}</span>`;
