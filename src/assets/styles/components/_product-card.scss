@@ -1,0 +1,40 @@
+.card {
+  display: grid;
+  justify-content: start;
+  align-items: end;
+  overflow: clip;
+}
+
+.card > * {
+  grid-column: 1/1;
+}
+
+.card__body {
+  background-color: hsl(var(--bg-primary) / 75%);
+}
+
+.card__inner {
+  padding: var(--space);
+}
+
+@media (hover: hover) {
+  .card > * {
+    grid-row: 1/1;
+  }
+
+  .card__inner,
+  .card__body {
+    transform: translateY(100%);
+  }
+
+  .card:is(:hover, :focus-within) :is(.card__inner, .card__body) {
+    transform: translateY(0);
+  }
+
+  .card__body {
+    transition: transform 300ms;
+  }
+  .card__inner {
+    transition: transform 300ms 100ms;
+  }
+}

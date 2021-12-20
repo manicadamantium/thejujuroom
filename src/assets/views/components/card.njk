@@ -2,9 +2,9 @@
   {% include "components/product-image.njk" %}
   <div class="card__body">
     <div class="card__inner">
-      <h3 class="fs-5 font-sans">{{ product.name }}</h3>
-      <p>$ {{ product.price }}</p>
-      <div class="card__footer cluster gap-s padding-s">
+      <h3 class="fs-5 font-sans margin--none">{{ product.name }}</h3>
+      <p class="margin--none">$ {{ product.price }}</p>
+      <div class="card__footer spaced cluster gap-s padding-s">
         <label for="qty-{{ product.id }}">
           <span aria-hidden="true">Qty:</span>
           <span class="visually-hidden">Quantity</span>

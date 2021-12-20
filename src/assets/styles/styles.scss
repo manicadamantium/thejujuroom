@@ -75,6 +75,7 @@ body {
   background-color: hsl(var(--bg-primary));
   font-family: var(--font-body);
   font-size: var(--type-size);
+  scroll-behavior: smooth;
 }
 
 h1,

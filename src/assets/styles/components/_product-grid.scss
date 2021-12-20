@@ -1,9 +1,11 @@
 .product-grid {
-  margin: 0;
-  padding: var(--space);
   display: flex;
   flex-wrap: wrap;
+  gap: var(--space);
   justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: var(--space);
 
   li {
     flex-basis: 25ch;
