@@ -1,0 +1,12 @@
+---
+title: Products
+---
+[
+{% for item in products %}
+  {
+    "id": "{{ item.id }}",
+    "name": "{{ item.name }}",
+    "price": {{ item.price }}
+  }{{ "," if not loop.last }}
+{% endfor %}
+]

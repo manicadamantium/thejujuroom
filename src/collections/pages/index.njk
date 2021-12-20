@@ -74,15 +74,16 @@ css: ['frontpage']
   <div class="with-sidebar" style="align-items: start;">
     <article class="sidebar cart dark" style="flex-basis: 35ch;">
       <h3 class="cart__title">Your Cart</h3>
-      
+
       <ul class="cart__list" data-cart-list></ul>
-      
+
       <p class="spaced cluster margin--none">
-        <span class="weight-bold">Total:</span>
-        <output class="cart__total" data-cart-total>$ 0.00</output>
+        <span id="cart-total" class="weight-bold">Total:</span>
+        <output aria-describedby="cart-total-desc" aria-labelledby="cart-total" class="cart__total" data-cart-total>$ 0.00</output>
       </p>
     </article>
-    <ul class="product-grid not-sidebar">
+    <p id="cart-total-desc" class="visually-hidden">The total price of all of the items in your cart.</p>
+    <ul class="product-grid not-sidebar" data-product-grid>
       {% for product in products %}
         <li>{% include "components/card.njk" %}</li>
       {% endfor %}

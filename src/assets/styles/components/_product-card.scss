@@ -3,6 +3,11 @@
   justify-content: start;
   align-items: end;
   overflow: clip;
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  border-color: hsl(var(--bg-accent) / 50%);
 }
 
 .card > * {
@@ -10,7 +15,8 @@
 }
 
 .card__body {
-  background-color: hsl(var(--bg-primary) / 75%);
+  background-color: hsl(var(--bg-primary));
+  border-top: inherit;
 }
 
 .card__inner {
@@ -37,4 +43,8 @@
   .card__inner {
     transition: transform 300ms 100ms;
   }
+}
+
+.card:target {
+  animation: ripple 300ms 2 ease-in-out;
 }

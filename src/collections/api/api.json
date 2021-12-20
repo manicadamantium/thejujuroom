@@ -1,0 +1,3 @@
+{
+  "permalink": "/api/v.1.0.0/{{ title | slugify }}.json"
+}
