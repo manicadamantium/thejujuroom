@@ -8,9 +8,18 @@ css: ['frontpage']
   <p class="dark nav-text">Free shipping across Canada</p>
   <nav class="nav-list">
     <ul class="cluster gap--m margin--none">
-      <li><a href="#!">{{ 'mail' | icon | safe }} <span class="visually-hidden">Email</span></a></li>
-      <li><a href="#!">{{ 'facebook' | icon | safe }} <span class="visually-hidden">Facebook</span></a></li>
-      <li><a href="#!">{{ 'instagram' | icon | safe }} <span class="visually-hidden">Instagram</span></a></li>
+      <li>
+        <a href="#!">{{ 'mail' | icon | safe }}
+          <span class="visually-hidden">Email</span></a>
+      </li>
+      <li>
+        <a href="#!">{{ 'facebook' | icon | safe }}
+          <span class="visually-hidden">Facebook</span></a>
+      </li>
+      <li>
+        <a href="#!">{{ 'instagram' | icon | safe }}
+          <span class="visually-hidden">Instagram</span></a>
+      </li>
     </ul>
   </nav>
 </header>
@@ -62,9 +71,19 @@ css: ['frontpage']
 
 <section id="section-5" class="full-vh padding--l">
   <h2 class="section-title">Shop now</h2>
-  <ul class="product-grid">
-    {% for product in products %}
-      <li>{% include "components/card.njk" %}</li>
-    {% endfor %}
-  </ul>
+  <div class="with-sidebar" style="align-items: start;">
+    <article class="sidebar cart dark" style="flex-basis: 35ch;">
+      <h3 class="fs-5 margin--none">Your Cart</h3>
+      <ul class="cart__list" data-cart-list></ul>
+      <p class="spaced cluster margin--none">
+        <span class="weight-bold">Total:</span>
+        <output class="cart__total" data-cart-total>$ 0.00</output>
+      </p>
+    </article>
+    <ul class="product-grid not-sidebar">
+      {% for product in products %}
+        <li>{% include "components/card.njk" %}</li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>

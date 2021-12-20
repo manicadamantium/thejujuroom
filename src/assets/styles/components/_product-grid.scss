@@ -1,0 +1,27 @@
+.product-grid {
+  margin: 0;
+  padding: var(--space);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  li {
+    flex-basis: 25ch;
+  }
+}
+
+.cart {
+  background-color: hsl(var(--bg-primary));
+  position: sticky;
+  top: var(--space-l);
+}
+
+.cart__list:empty::before {
+  content: "You have no products on your cart yet.";
+}
+
+.cart__list {
+  padding: 0;
+  margin: 0;
+  padding-block: var(--space-l);
+}
