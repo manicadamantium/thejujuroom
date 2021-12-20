@@ -59,3 +59,12 @@ css: ['frontpage']
     <img class="not-sidebar" src="/assets/images/img-41.png" alt="">
   </div>
 </section>
+
+<section id="section-5" class="full-vh padding--l">
+  <h2 class="section-title">Shop now</h2>
+  <ul class="product-grid">
+    {% for product in products %}
+      <li>{% include "components/card.njk" %}</li>
+    {% endfor %}
+  </ul>
+</section>

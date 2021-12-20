@@ -3,10 +3,17 @@ const collections = require('./src/config/collections');
 const filters = require('./src/config/filters');
 const watchtargets = require('./src/config/watchtargets');
 const plugins = require('./src/config/plugins');
+const { srcset, src } =  require('./src/config/shortcodes')
 
 require('dotenv').config()
 
 module.exports = function (eleventyConfig) {
+
+  console.log("Adding shortcode: src")
+  eleventyConfig.addShortcode("src", src);
+
+  console.log("Adding shortcode: srcset");
+  eleventyConfig.addShortcode("srcset", srcset);
 
   // Get passthroughs from /src/config/passthroughs.js
   Object.keys(passthroughs).forEach((passthroughName) => {

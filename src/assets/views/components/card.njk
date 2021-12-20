@@ -1,0 +1,25 @@
+<div class="card">
+  {% include "components/product-image.njk" %}
+  <div class="card__body">
+    <div class="card__inner">
+      <h3 class="fs-5 font-sans">{{ product.name }}</h3>
+      <p>$ {{ product.price }}</p>
+      <div class="card__footer cluster gap-s padding-s">
+        <label for="qty-{{ product.id }}">
+          <span aria-hidden="true">Qty:</span>
+          <span class="visually-hidden">Quantity</span>
+        </label>
+        <input 
+          type="number"
+          value="0"
+          type="number"
+          min="0"
+          max="10"
+          style="width: 5ch"
+          data-update-cart="{{ product.id }}"
+          name="qty-{{ product.id }}"
+          id="qty-{{ product.id }}">
+      </div>
+    </div>
+  </div>
+</div>
