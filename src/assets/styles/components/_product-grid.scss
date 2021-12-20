@@ -27,3 +27,30 @@
   margin: 0;
   padding-block: var(--space-l);
 }
+
+.cart__title {
+  font-size: var(--fs-5);
+  margin: 0;
+}
+
+@media (max-width: 746px) {
+  .cart {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar.cart {
+    padding: var(--space-s);
+  }
+
+  .cart__title {
+    font-size: var(--fs-6);
+  }
+
+  .cart__list {
+    max-height: 0;
+    overflow: clip;
+    height: 100%;
+    padding: 0;
+  }
+}
