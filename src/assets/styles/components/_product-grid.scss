@@ -83,6 +83,7 @@
 
   .sidebar.cart {
     padding: var(--space-s);
+    z-index: 999;
   }
 
   .cart__title {
@@ -90,10 +91,7 @@
   }
 
   .cart__list {
-    max-height: 0;
-    overflow: clip;
-    height: 100%;
-    padding: 0;
+    display: none;
   }
 }
 
