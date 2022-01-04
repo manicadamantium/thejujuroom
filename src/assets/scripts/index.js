@@ -1,3 +1,4 @@
+import "./components/Dialog";
 import { $, $$ } from "./utilities/dom-helpers";
 import { ShoppingCart } from "./components/ShoppingCart";
 import { Inventory } from "./components/Inventory";

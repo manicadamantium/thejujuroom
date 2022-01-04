@@ -1,0 +1,20 @@
+.modal {
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: fixed;
+  z-index: 9999;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.modal__content {
+  background-color: hsl(var(--bg-primary));
+  padding: var(--space-l);
+}
+
+.fullscreen {
+  place-self: stretch;
+}
