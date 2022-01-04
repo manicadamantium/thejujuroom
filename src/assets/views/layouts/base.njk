@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ title if title else site.title | safe }}</title>
-        <meta name="description" content="{{ description if description else site.description | safe }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else site.title | safe }}</title>
+    <meta name="description" content="{{ description if description else site.description | safe }}">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Quicksand:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Quicksand:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/styles.css">
 
-        {% if css %}
-            {% for stylesheet in css %}
-                <link rel="stylesheet" href="/assets/styles/{{ stylesheet }}.css">
-            {% endfor %}
-        {% endif %}
-    </head>
-    <body>
-        <header id="header-1" class="padding--m gap--m">
-            <p class="dark nav-text">Free shipping across Canada</p>
-            <nav class="nav-list">
-                <ul class="cluster gap--m margin--none">
-                    <li>
-                        <a href="#!">{{ 'mail' | icon | safe }}
-                            <span class="visually-hidden">Email</span></a>
-                    </li>
-                    <li>
-                        <a href="#!">{{ 'facebook' | icon | safe }}
-                            <span class="visually-hidden">Facebook</span></a>
-                    </li>
-                    <li>
-                        <a href="#!">{{ 'instagram' | icon | safe }}
-                            <span class="visually-hidden">Instagram</span></a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main id="main" tabindex="-1">
-            {{ content | safe }}
-        </main>
+    {% if css %}
+      {% for stylesheet in css %}
+        <link rel="stylesheet" href="/assets/styles/{{ stylesheet }}.css">
+      {% endfor %}
+    {% endif %}
+  </head>
+  <body>
+    <header id="header-1" class="padding--m gap--m">
+      <p class="dark nav-text">Free shipping across Canada</p>
+      <nav class="nav-list">
+        <ul class="cluster gap--m margin--none">
+          <li>
+            <a href="#!">{{ 'mail' | icon | safe }}
+              <span class="visually-hidden">Email</span></a>
+          </li>
+          <li>
+            <a href="#!">{{ 'facebook' | icon | safe }}
+              <span class="visually-hidden">Facebook</span></a>
+          </li>
+          <li>
+            <a href="#!">{{ 'instagram' | icon | safe }}
+              <span class="visually-hidden">Instagram</span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      {{ content | safe }}
+    </main>
 
-        {% block modals %}{% endblock %}
+    {% block modals %}{% endblock %}
+    <footer class="padding" style="background: hsl(var(--bg-secondary))">
+      <p class="margin--none">&copy; 2022 The Juju Room</p>
+    </footer>
 
-        <script src="/assets/scripts/index.js"></script>
-    </body>
+    <script src="/assets/scripts/index.js"></script>
+  </body>
 </html>
