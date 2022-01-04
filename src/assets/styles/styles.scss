@@ -102,3 +102,12 @@ h6 {
     );
   }
 }
+
+.feathericon {
+  aspect-ratio: 1;
+  height: 1.3em;
+  stroke: currentColor;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

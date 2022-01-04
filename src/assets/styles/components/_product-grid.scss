@@ -53,8 +53,9 @@
 }
 
 .cart-item__name a {
-  color: hsl(var(--primary-300));
+  color: hsl(var(--primary-500));
   text-decoration: dotted underline hsl(var(--primary-500) / 50%);
+  font-weight: bold;
 }
 
 .cart-item__name a:hover {

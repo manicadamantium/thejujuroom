@@ -63,6 +63,7 @@ css: ['frontpage']
         <span id="cart-total" class="weight-bold">Total:</span>
         <output aria-describedby="cart-total-desc" aria-labelledby="cart-total" class="cart__total" data-cart-total>$ 0.00</output>
       </p>
+      <button class="margin-left--auto margin-block--xs primary button" data-dialog="checkout-modal">Checkout</button>
     </article>
     <p id="cart-total-desc" class="visually-hidden">The total price of all of the items in your cart.</p>
     <ul class="product-grid not-sidebar" data-product-grid>
@@ -73,4 +74,5 @@ css: ['frontpage']
   </div>
 </section>
 
+{% include 'components/checkout.njk' %}
 {% include 'components/age-verification.njk' %}

@@ -1,5 +1,10 @@
 import { createElement } from "../utilities/dom-helpers";
 
+/**
+ *
+ * @class ShoppingCart
+ * @deprecated
+ */
 class ShoppingCart {
   /**
    *
@@ -58,28 +63,117 @@ function render(cart) {
 
   cart._UI.total.innerHTML = `$ ${total.toFixed(2)}`;
 
-  removeAllChildren(cart._UI.list)
+  removeAllChildren(cart._UI.list);
 
-  cart.list.filter(item => item.quantity && item.quantity > 0).forEach((item) => {
-    const li = createElement("li");
-    li.classList.add("cart-item");
-    li.innerHTML = `<span class="cart-item__name"><a href="#${item.id}">${item.name}</a> &times ${item.quantity}</span>`;
-    li.innerHTML += `<span class="cart-item__price">$ ${(
-      item.price * item.quantity
-    ).toFixed(2)}</span>`;
+  cart.list
+    .filter((item) => item.quantity && item.quantity > 0)
+    .forEach((item) => {
+      const li = createElement("li");
+      li.classList.add("cart-item");
+      li.innerHTML = `<span class="cart-item__name"><a href="#${item.id}">${item.name}</a> &times ${item.quantity}</span>`;
+      li.innerHTML += `<span class="cart-item__price">$ ${(
+        item.price * item.quantity
+      ).toFixed(2)}</span>`;
 
-    cart._UI.list.appendChild(li);
-  });
+      cart._UI.list.appendChild(li);
+    });
 }
 
 /**
- * 
- * @param {HTMLElement} node 
+ *
+ * @param {HTMLElement} node
  */
 function removeAllChildren(node) {
   while (node.lastChild) {
-    node.removeChild(node.lastChild)
+    node.removeChild(node.lastChild);
   }
 }
 
-export { ShoppingCart };
+/**
+ *
+ *
+ * @class ShoppingCartManager
+ * @property
+ */
+class ShoppingCartManager {
+  /**
+   * Creates an instance of ShoppingCartManager.
+   * @param {*} [products=[]] the list of products
+   * @memberof ShoppingCartManager
+   */
+  constructor(products = []) {
+    if (products == null) {
+      throw Error("Products array is null");
+    } else {
+      console.log("[SHOPPING_CART_MANAGER] products", products);
+    }
+
+    /**
+     * the list of available products
+     * @property {Array}
+     * @public
+     */
+    this.products = products;
+
+    /**
+     * @property {*}
+     * @private
+     */
+    this._UI = {
+      lists: [...document.querySelectorAll("[data-cart-list]:is(ul, ol)")],
+      totalDisplays: [
+        ...document.querySelectorAll(
+          "[data-cart-total]:is(output, [aria-role=status])"
+        ),
+      ],
+    };
+  }
+
+  /**
+   * Adds an item to the cart
+   *
+   * @param {*} object
+   * @param {string} object.id the ID of the product
+   * @param {number} quantity the quantity of the product
+   * @memberof ShoppingCartManager
+   */
+  addItem({ id, quantity }) {
+    const item = this.products.find((i) => i.id === id);
+    if (item) {
+      item.quantity = quantity;
+    }
+
+    this._renderCarts();
+  }
+
+  _renderCarts() {
+    this._UI.lists.forEach((list) => {
+      removeAllChildren(list);
+      this.products
+        .filter((item) => item.quantity && item.quantity > 0)
+        .forEach((item) => {
+          const li = createElement("li");
+          li.classList.add("cart-item");
+          li.innerHTML = `<span class="cart-item__name"><a href="#${item.id}">${item.name}</a> &times ${item.quantity}</span>`;
+          li.innerHTML += `<span class="cart-item__price">$ ${(
+            item.price * item.quantity
+          ).toFixed(2)}</span>`;
+
+          list.appendChild(li);
+        });
+    });
+
+    const totalPrice = this.products
+      .filter((item) => item.quantity != null)
+      .reduce((previous, current) => {
+        const itemPrice = current.price * current.quantity;
+        return previous + itemPrice;
+      }, 0);
+ 
+    this._UI.totalDisplays.forEach(
+      (i) => (i.innerHTML = `$ ${totalPrice.toFixed(2)}`)
+    );
+  }
+}
+
+export { ShoppingCart, ShoppingCartManager };

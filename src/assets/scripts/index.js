@@ -1,6 +1,6 @@
 import "./components/Dialog";
 import { $, $$ } from "./utilities/dom-helpers";
-import { ShoppingCart } from "./components/ShoppingCart";
+import { ShoppingCart, ShoppingCartManager } from "./components/ShoppingCart";
 import { Inventory } from "./components/Inventory";
 
 $$(".button").forEach((button) => {
@@ -11,23 +11,19 @@ $$(".button").forEach((button) => {
   });
 });
 
-$$(".cart").forEach(async (cart) => {
+/* $$(".cart").forEach(async (cart) => {
   const products = await Inventory.fetchProducts();
   window.shoppingCart = new ShoppingCart(cart, products);
 
   console.log({ shoppingCart });
-});
+}); */
 
-$$("[data-product-grid]").forEach((section) => {
-  section.addEventListener("input", (event) => {
-    if (event.target.matches("[data-update-cart]")) {
-      const input = event.target;
-      handleEvent(input);
-    }
-  });
-});
+(async function () {
+  const products = await Inventory.fetchProducts();
+  const cartManager = new ShoppingCartManager(products);
+  window.shoppingCart = cartManager;
+  console.log(cartManager);
 
-setTimeout(() => {
   // Pre-populate cart with saved items from previous session
   // via localStorage
   $$("[data-product-card]").forEach((card) => {
@@ -39,7 +35,16 @@ setTimeout(() => {
       handleEvent(input);
     }
   });
-}, 1000)
+})();
+
+$$("[data-product-grid]").forEach((section) => {
+  section.addEventListener("input", (event) => {
+    if (event.target.matches("[data-update-cart]")) {
+      const input = event.target;
+      handleEvent(input);
+    }
+  });
+});
 
 function handleEvent(input) {
   const quantity = input.value;

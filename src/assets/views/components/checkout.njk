@@ -1,0 +1,21 @@
+<div id="checkout-modal" class="modal">
+  <div class="modal__backdrop" data-dialog-hide></div>
+  <div class="modal__content">
+    <div class="spaced center-aligned cluster">
+      <h2>Checkout</h2>
+      <button class="small button" data-dialog-hide>
+        <svg class="feathericon">
+          <use href="/assets/images/feather-sprite.svg#x"/>
+        </svg>
+        <span class="sr-only">Close</span>
+      </button>
+    </div>
+    <div class="stack">
+      <ul class="cart__list" data-cart-list></ul>
+      <p class="spaced cluster margin--none">
+        <span id="cart-total" class="weight-bold">Total:</span>
+        <output aria-describedby="cart-total-desc" aria-labelledby="cart-total" class="cart__total" data-cart-total>$ 0.00</output>
+      </p>
+    </div>
+  </div>
+</div>

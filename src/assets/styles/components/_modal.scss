@@ -10,11 +10,23 @@
   }
 }
 
+.modal > * {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.modal__backdrop {
+	background-color: hsl(var(--fg-contrast) / 60%);
+	place-self: stretch;
+}
+
 .modal__content {
   background-color: hsl(var(--bg-primary));
   padding: var(--space-l);
+  width: min(65ch, 100%);
 }
 
 .fullscreen {
   place-self: stretch;
+  width: auto;
 }

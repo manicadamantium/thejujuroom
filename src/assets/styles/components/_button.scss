@@ -3,7 +3,7 @@
   border: 1px solid;
   color: hsl(var(--fg-contrast));
   cursor: pointer;
-  display: block;
+  display: flex;
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: normal;
@@ -14,6 +14,9 @@
   text-transform: lowercase;
   width: -moz-fit-content;
   width: fit-content;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 
   &.small {
     padding: var(--space-xs);
