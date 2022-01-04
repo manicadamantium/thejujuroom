@@ -42,14 +42,7 @@ module.exports = class {
 
     // pass other variables
     const vars = new webpack.DefinePlugin({
-      LAMBDA_ENDPOINT: JSON.stringify(process.env.LAMBDA_ENDPOINT),
-      STRIPE_PUBLISHABLE_KEY: JSON.stringify(
-        process.env.STRIPE_PUBLISHABLE_KEY
-      ),
-      PRICE_ID: JSON.stringify(process.env.PRICE_ID),
-      PAYMENT_ENDPOINT: JSON.stringify(process.env.PAYMENT_ENDPOINT),
-      TRANSACTION_ENDPOINT: JSON.stringify(process.env.TRANSACTION_ENDPOINT),
-      EMAIL_ENDPOINT: JSON.stringify(process.env.EMAIL_ENDPOINT),
+      PLACEMENT_ENDPOINT: JSON.stringify(process.env.PLACEMENT_ENDPOINT),
     })
 
     // Main Config

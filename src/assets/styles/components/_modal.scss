@@ -16,14 +16,19 @@
 }
 
 .modal__backdrop {
-	background-color: hsl(var(--fg-contrast) / 60%);
-	place-self: stretch;
+  background-color: hsl(var(--fg-contrast) / 60%);
+  place-self: stretch;
 }
 
 .modal__content {
   background-color: hsl(var(--bg-primary));
   padding: var(--space-l);
   width: min(65ch, 100%);
+
+  &.scrollable {
+    overflow: auto;
+    max-height: 100%;
+  }
 }
 
 .fullscreen {

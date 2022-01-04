@@ -107,3 +107,28 @@
     outline-offset: 2rem;
   }
 }
+
+.payment-instructions {
+  counter-reset: instruction;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xxl);
+  margin-block-start: var(--space-xxl);
+}
+
+.payment-instructions > li {
+  counter-increment: instructions;
+  position: relative;
+  padding-inline-start: var(--space-xl);
+  flex-basis: 35ch;
+  flex-grow: 1;
+}
+
+.payment-instructions > li::before {
+  content: counter(instructions);
+  position: absolute;
+  left: 0;
+  font-size: var(--type-size-4);
+  font-weight: bold;
+  font-family: var(--font-display);
+}

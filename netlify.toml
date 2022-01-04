@@ -8,3 +8,6 @@
 
 [[plugins]]
   package = "netlify-plugin-inline-critical-css"
+
+[functions]
+ directory = "functions"

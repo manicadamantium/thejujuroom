@@ -2,7 +2,7 @@
   <div class="modal__backdrop" data-dialog-hide></div>
   <div class="modal__content">
     <div class="spaced center-aligned cluster">
-      <h2>Checkout</h2>
+      <h2 class="margin--none">Checkout</h2>
       <button class="small button" data-dialog-hide>
         <svg class="feathericon">
           <use href="/assets/images/feather-sprite.svg#x"/>
@@ -16,6 +16,89 @@
         <span id="cart-total" class="weight-bold">Total:</span>
         <output aria-describedby="cart-total-desc" aria-labelledby="cart-total" class="cart__total" data-cart-total>$ 0.00</output>
       </p>
+    </div>
+
+    <p class="margin-top--s">
+      By purchasing our products, you agree to our <a href="/terms-and-conditions" target="_blank">Terms & Conditions</a>.
+    </p>
+    <div class="end-justified cluster padding-top--s">
+      <button class="button" data-dialog="payment-modal" data-dialog-hide>Proceed to payment</button>
+    </div>
+  </div>
+</div>
+
+<div id="payment-modal" class="modal">
+  <div class="modal__backdrop" data-dialog-hide></div>
+  <div class="scrollable fullscreen modal__content">
+    <div class="spaced center-aligned cluster" style="position: sticky;top: calc(var(--space-l) * -1);margin-inline: calc(var(--space-l) * -1);margin-bottom: var(--space);padding: var(--space-l);background-color: hsl(var(--bg-primary));">
+      <h2 class="margin--none">Payment instructions</h2>
+      <button class="small button" data-dialog-hide data-dialog="checkout-modal">
+        <svg class="feathericon">
+          <use href="/assets/images/feather-sprite.svg#arrow-left"/>
+        </svg>
+        <span class="sr-only">Go back to checkout</span>
+      </button>
+    </div>
+    <form id="place-order" class="stack">
+      <h3 class="margin--none">Place your order</h3>
+      <p>Enter your details:</p>
+      <div class="stack gap--s margin-inline--auto margin-top--l" style="width: min(35ch, 100%)">
+        <div class="stack">
+          <label for="full-name" class="required">Full name</label>
+          <input type="text" name="full-name" id="full-name" class="form-control" required autocomplete="name" spellcheck="false" autocapitalize="words">
+        </div>
+        <div class="stack">
+          <label for="email" class="required">Email address</label>
+          <input type="email" name="email" id="email" class="form-control" required autocomplete="email">
+        </div>
+        <div class="cluster end-justified">
+          <button class="button" data-class-onsubmit="loading">Place order</button>
+        </div>
+      </div>
+    </form>
+    <div id="order-placed" class="stack" hidden>
+      <h3 class="margin--none">Your order has been placed!</h3>
+      <p>Here's what to do next:</p>
+
+      <ol class="margin--none margin-top--l padding--none payment-instructions" style="list-style: none">
+        <li class="stack">
+          <p>
+            <strong class="fs-4 font-display">Order confirmed</strong>
+          </p>
+          <p>Please send your e-transfer at this time.</p>
+          <p>We do not accept payments until orders are being fulfilled and are ready to ship</p>
+        </li>
+        <li class="stack">
+          <p>
+            <strong class="fs-4 font-display">Payment instructions</strong>
+          </p>
+          <p class="margin-bottom--l">Total payment:<br>
+            <span class="weight--bold font-display fs-1 margin--none" data-cart-total="" style="line-height: 1;">$ 0.00</span></p>
+          <p>E-transfer to <a href="mailto:info@thejujuroom.com">info@thejujuroom.com</a>.</p>
+          <p>Please use the following question/answer combination:</p>
+          <ul class="margin-bottom--s">
+            <li>Question: Favourite place?</li>
+            <li>Answer: Canada</li>
+          </ul>
+
+          <p>Please use the following highlighted information in your E-Transfer message box:</p>
+          <ul class="margin-bottom--s">
+            <li>Your name: <b data-customer-name></b>
+            </li>
+            <li>The email: <b data-customer-email></b>
+            </li>
+          </ul>
+
+          <p>It is necessary to <strong>include the email used to place the order</strong> in the transfer.</p>
+        </li>
+        <li class="stack">
+          <p>
+            <strong class="fs-4 font-display">Shipping Information</strong>
+          </p>
+          <p>Order tracking information and shipping details are available upon email request.</p>
+          <p>Thank you for your purchase!</p>
+        </li>
+      </ol>
     </div>
   </div>
 </div>

@@ -1,0 +1,10 @@
+.form-control {
+  border: 1px solid hsl(var(--fg-default));
+  padding: 1ch;
+  font-family: var(--font-body);
+}
+
+.required::after {
+  content: " *";
+  color: red;
+}

@@ -16,6 +16,7 @@
 @import "components/modal";
 @import "components/product-card";
 @import "components/product-grid";
+@import "components/form-control";
 
 /* UTILITIES */
 @import "utilities/alignment";
@@ -110,4 +111,8 @@ h6 {
   stroke-width: 3px;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+[class][hidden] {
+  display: none;
 }

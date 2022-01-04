@@ -127,6 +127,19 @@ class ShoppingCartManager {
         ),
       ],
     };
+
+    this.events = {
+      change: [],
+    };
+
+    this.events.change.forEach((fn) =>
+      fn({
+        product: null,
+        products: this.products,
+        total: this.total,
+        totalItems: this.totalItems,
+      })
+    );
   }
 
   /**
@@ -144,6 +157,37 @@ class ShoppingCartManager {
     }
 
     this._renderCarts();
+    this.events.change.forEach((fn) =>
+      fn({
+        product: item,
+        products: this.products,
+        total: this.total,
+        totalItems: this.totalItems,
+      })
+    );
+  }
+
+  /**
+   *
+   * @property {number}
+   * @readonly
+   * @memberof ShoppingCartManager
+   */
+  get total() {
+    return this.products
+      .filter((item) => item.quantity != null && item.quantity > 0)
+      .reduce((previous, current) => {
+        const itemPrice = current.price * current.quantity;
+        return previous + itemPrice;
+      }, 0);
+  }
+
+  get totalItems() {
+    return this.products
+      .filter((item) => item.quantity != null && item.quantity > 0)
+      .reduce((previous, current) => {
+        return previous + current.quantity;
+      }, 0);
   }
 
   _renderCarts() {
@@ -163,13 +207,8 @@ class ShoppingCartManager {
         });
     });
 
-    const totalPrice = this.products
-      .filter((item) => item.quantity != null)
-      .reduce((previous, current) => {
-        const itemPrice = current.price * current.quantity;
-        return previous + itemPrice;
-      }, 0);
- 
+    const totalPrice = this.total;
+
     this._UI.totalDisplays.forEach(
       (i) => (i.innerHTML = `$ ${totalPrice.toFixed(2)}`)
     );

@@ -47,7 +47,7 @@ $$("[data-product-grid]").forEach((section) => {
 });
 
 function handleEvent(input) {
-  const quantity = input.value;
+  const quantity = input.valueAsNumber;
   const productID = input.dataset.updateCart;
 
   if (quantity > 10 || quantity < 0) {
@@ -69,3 +69,63 @@ function handleEvent(input) {
     }
   }
 }
+
+document.getElementById("place-order").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const submission = {
+    name: form["full-name"].value,
+    email: form["email"].value,
+    products: window.shoppingCart.products.filter(
+      (item) => item.quantity && item.quantity > 0
+    ),
+  };
+
+  console.log({ submission });
+
+  fetch(PLACEMENT_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(submission),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw Error("Response is not ok.");
+      }
+    })
+    .then((json) => {
+      console.log("RESPONSE", json);
+      e.target.setAttribute("hidden", "");
+      document.getElementById("order-placed").removeAttribute("hidden");
+
+      $$("[data-customer-name]").forEach(
+        (e) => (e.innerText = submission.name)
+      );
+      $$("[data-customer-email]").forEach(
+        (e) => (e.innerText = submission.email)
+      );
+      $$("[data-cart-total]").forEach(
+        (e) => (e.innerText = `$ ${window.shoppingCart.total.toFixed(2)}`)
+      );
+
+      // Reset local storage
+      $$("[data-product-card]").forEach((card) => {
+        const id = card.id;
+        const input = card.querySelector("input[data-update-cart]");
+
+        if (input) {
+          localStorage.removeItem(id);
+          input.value = 0;
+          handleEvent(input);
+        }
+      });
+    })
+    .catch((error) => console.log("ERROR", error));
+});
+
+console.log("PLACEMENT_ENDPOINT", PLACEMENT_ENDPOINT);
