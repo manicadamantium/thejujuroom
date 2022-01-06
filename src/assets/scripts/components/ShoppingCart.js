@@ -220,10 +220,12 @@ class ShoppingCartManager {
           list.appendChild(li);
         });
 
-      const shippingFee = document.createElement("li");
-      shippingFee.classList.add("cart-item");
-      shippingFee.innerHTML = `<span class="cart-item__name">Shipping Fee</span><span class="cart-item__price">$ ${this.shippingFee.toFixed(2)}</span>`;
-      list.appendChild(shippingFee);
+      if (this.totalItems > 0) {
+        const shippingFee = document.createElement("li");
+        shippingFee.classList.add("cart-item");
+        shippingFee.innerHTML = `<span class="cart-item__name">Shipping Fee</span><span class="cart-item__price">$ ${this.shippingFee.toFixed(2)}</span>`;
+        list.appendChild(shippingFee);
+      }
     });
 
     const totalPrice = this.total;

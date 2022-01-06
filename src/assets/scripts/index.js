@@ -14,7 +14,7 @@ $$(".button").forEach((button) => {
 (async function () {
   const products = await Inventory.fetchProducts();
   const cartManager = new ShoppingCartManager(products);
-  cartManager.shippingFee = (total) => (total < 150 ? 20 : 0);
+  cartManager.shippingFee = (total) => (total > 150 ? 0 : total > 0 ? 20 : 0);
 
   window.shoppingCart = cartManager;
   console.log(cartManager);
@@ -26,7 +26,7 @@ $$(".button").forEach((button) => {
     const input = card.querySelector("input[data-update-cart]");
 
     if (input) {
-      input.value = localStorage.getItem(id);
+      input.value = localStorage.getItem(id) || 0;
       handleEvent(input);
     }
   });
@@ -50,7 +50,7 @@ function handleEvent(input) {
     return;
   }
 
-  if (quantity && productID) {
+  if (quantity > -1 && productID) {
     window.shoppingCart.addItem({ id: productID, quantity });
 
     if (quantity > 0) {
