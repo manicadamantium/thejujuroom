@@ -160,3 +160,7 @@ body section {
     hsl(var(--secondary-500) / 75%)
   );
 }
+
+#section-6 {
+	background: linear-gradient(to bottom right, hsl(var(--primary-500)), hsl(var(--secondary-500)));
+}
