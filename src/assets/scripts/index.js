@@ -1,6 +1,6 @@
 import "./components/Dialog";
-import { $, $$ } from "./utilities/dom-helpers";
-import { ShoppingCart, ShoppingCartManager } from "./components/ShoppingCart";
+import { $$ } from "./utilities/dom-helpers";
+import { ShoppingCartManager } from "./components/ShoppingCart";
 import { Inventory } from "./components/Inventory";
 
 $$(".button").forEach((button) => {
@@ -11,16 +11,11 @@ $$(".button").forEach((button) => {
   });
 });
 
-/* $$(".cart").forEach(async (cart) => {
-  const products = await Inventory.fetchProducts();
-  window.shoppingCart = new ShoppingCart(cart, products);
-
-  console.log({ shoppingCart });
-}); */
-
 (async function () {
   const products = await Inventory.fetchProducts();
   const cartManager = new ShoppingCartManager(products);
+  cartManager.shippingFee = (total) => (total < 150 ? 20 : 0);
+
   window.shoppingCart = cartManager;
   console.log(cartManager);
 
@@ -80,6 +75,7 @@ document.getElementById("place-order").addEventListener("submit", (e) => {
     products: window.shoppingCart.products.filter(
       (item) => item.quantity && item.quantity > 0
     ),
+    shippingFee: window.shoppingCart.shippingFee
   };
 
   console.log({ submission });

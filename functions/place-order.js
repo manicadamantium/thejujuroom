@@ -3,7 +3,7 @@ require("dotenv").config();
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-function sendOrder(name, email, products) {
+function sendOrder(name, email, products, shippingFee = 0) {
   const msg = {
     to: process.env.RECEIVER_EMAIL, // Change to your recipient
     from: process.env.RECEIVER_EMAIL, // Change to your verified sender
@@ -22,8 +22,8 @@ function sendOrder(name, email, products) {
     .map((p) => `<li>${p.name} ($ ${p.price.toFixed()} x ${p.quantity})</li>`)
     .join("\n");
 
-  msg.text = `Name: ${name}\nEmail: ${email}\n\nProducts ordered:\n${productsAsText}\n\nTOTAL: $ ${total.toFixed(2)}`;
-  msg.html = `<b>Name</b>: ${name}<br><b>Email</b>: ${email}<br><br><b>Products ordered</b>:<br><ul>${productsAsHtml}</ul><br><b>TOTAL:</b> $ ${total.toFixed(2)}`;
+  msg.text = `Name: ${name}\nEmail: ${email}\n\nProducts ordered:\n${productsAsText}\nShipping fee: $ ${shippingFee.toFixed(2)}\n\nTOTAL: $ ${total.toFixed(2)}`;
+  msg.html = `<b>Name</b>: ${name}<br><b>Email</b>: ${email}<br><br><b>Products ordered</b>:<br><ul>${productsAsHtml}</ul><br><b>Shipping fee</b>: $ ${shippingFee.toFixed(2)}<br><b>TOTAL:</b> $ ${(total + shippingFee).toFixed(2)}`;
 
   return sgMail.send(msg);
 }
@@ -38,17 +38,17 @@ exports.handler = async function (event, context) {
     };
   }
 
-  const { name, email, products } = JSON.parse(event.body);
+  const { name, email, products, shippingFee } = JSON.parse(event.body);
 
   let response = {};
 
-  await sendOrder(name, email, products)
+  await sendOrder(name, email, products, shippingFee)
     .then(() => {
       response = {
         statusCode: 200,
         body: JSON.stringify({
           message: "Order placed successfully!",
-          body: { name, email, products },
+          body: { name, email, products, shippingFee },
         }),
       };
     })

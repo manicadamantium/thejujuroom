@@ -140,6 +140,8 @@ class ShoppingCartManager {
         totalItems: this.totalItems,
       })
     );
+
+    this._shippingFeeCalculator = () => 0;
   }
 
   /**
@@ -174,6 +176,10 @@ class ShoppingCartManager {
    * @memberof ShoppingCartManager
    */
   get total() {
+    return this.totalProducts + this.shippingFee;
+  }
+
+  get totalProducts() {
     return this.products
       .filter((item) => item.quantity != null && item.quantity > 0)
       .reduce((previous, current) => {
@@ -188,6 +194,14 @@ class ShoppingCartManager {
       .reduce((previous, current) => {
         return previous + current.quantity;
       }, 0);
+  }
+
+  set shippingFee(fn) {
+    this._shippingFeeCalculator = fn ? fn : () => 0;
+  }
+
+  get shippingFee() {
+    return this._shippingFeeCalculator(this.totalProducts);
   }
 
   _renderCarts() {
@@ -205,6 +219,11 @@ class ShoppingCartManager {
 
           list.appendChild(li);
         });
+
+      const shippingFee = document.createElement("li");
+      shippingFee.classList.add("cart-item");
+      shippingFee.innerHTML = `<span class="cart-item__name">Shipping Fee</span><span class="cart-item__price">$ ${this.shippingFee.toFixed(2)}</span>`;
+      list.appendChild(shippingFee);
     });
 
     const totalPrice = this.total;
