@@ -6,17 +6,11 @@
 body {
   overflow: auto;
   height: 100vh;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y;
 }
 
 body section {
   scroll-snap-align: start;
-}
-
-.site-title {
-  -webkit-text-stroke: 2px hsl(var(--fg-contrast));
-  color: transparent;
-  text-align: center;
 }
 
 #header-1 {
@@ -138,9 +132,9 @@ body section {
   padding: var(--space-l);
 }
 
-.section-title {
-  -webkit-text-stroke: 2px hsl(var(--fg-contrast));
-  color: transparent;
+.section-title,
+.site-title {
+  -webkit-text-stroke: 1px hsl(var(--fg-contrast));
   display: flex;
   gap: var(--space);
 

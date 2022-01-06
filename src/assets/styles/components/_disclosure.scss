@@ -1,5 +1,13 @@
 .disclosure {
   border: 1px solid;
+  &,
+  & * {
+    transition: background 300ms;
+  }
+
+  &[open] {
+    background-color: hsl(var(--bg-primary) / 75%);
+  }
 }
 
 .disclosure + .disclosure {
@@ -19,7 +27,7 @@
 
   &:hover,
   &:hover + .disclosure-content {
-    background-color: hsl(var(--fg-contrast) / 15%);
+    background-color: hsl(var(--bg-primary) / 15%);
   }
 }
 
@@ -52,4 +60,9 @@
 
 .dark .disclosure-header::after {
   filter: invert(1);
+}
+
+.disclosure-content * {
+  width: min(75ch, 100%);
+  margin: auto;
 }
