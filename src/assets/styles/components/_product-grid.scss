@@ -15,7 +15,7 @@
 .cart {
   background-color: hsl(var(--bg-primary));
   position: sticky;
-  top: var(--space-l);
+  top: var(--space-xxxl);
 }
 
 .cart__list:empty::before {

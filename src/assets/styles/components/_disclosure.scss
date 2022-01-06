@@ -28,6 +28,7 @@
 
   padding: var(--space);
   padding-top: 0;
+  gap: var(--space-xs);
 }
 
 .disclosure-header::after {
@@ -38,6 +39,11 @@
   margin-inline-start: auto;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.disclosure-header:focus-visible {
+  outline: 3px solid hsl(var(--fg-contrast));
+  outline-offset: -6px;
 }
 
 .disclosure[open] .disclosure-header::after {
