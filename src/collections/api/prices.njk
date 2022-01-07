@@ -1,0 +1,31 @@
+---
+title: Prices
+---
+[
+{% for item in prices %}
+  {
+    "id": "{{ item.id }}",
+    "name": "{{ item.name }}"
+    {% if item.description %}
+      ,"description": "{{ item.description }}"
+    {% endif %}
+  {% if item.image %}
+      ,"image": "{{ item.image }}"
+    {% endif %}
+  {% if item.price %}
+     ,"price": {{ item.price | fixed }}
+    {% endif %}
+  {% if item.variants %}
+    ,"variants": [
+      {% for variant in item.variants %}
+        {
+          "id": "{{ variant.id }}",
+          "name": "{{ variant.name }}",
+          "price": {{ variant.price | fixed }}
+        }{{ "," if not loop.last }}
+    {% endfor %}
+    ]
+    {% endif %}
+  }{{ "," if not loop.last }}
+{% endfor %}
+]

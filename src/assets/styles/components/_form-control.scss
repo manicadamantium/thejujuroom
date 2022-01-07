@@ -8,3 +8,28 @@
   content: " *";
   color: red;
 }
+
+.checkable {
+  label {
+    border-radius: var(--ideal-radius, 6px);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: var(--space-s);
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: hsl(var(--bg-secondary));
+    }
+  }
+
+  :checked + label {
+    background-color: hsl(var(--primary-100));
+    border-color: hsl(var(--primary-500));
+  }
+
+  input {
+    @extend .visually-hidden;
+  }
+}

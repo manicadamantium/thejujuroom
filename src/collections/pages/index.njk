@@ -65,7 +65,7 @@ css: ['frontpage']
     </article>
     <p id="cart-total-desc" class="visually-hidden">The total price of all of the items in your cart.</p>
     <ul class="product-grid not-sidebar" data-product-grid>
-      {% for product in products %}
+      {% for product in prices %}
         <li>{% include "components/card.njk" %}</li>
       {% endfor %}
     </ul>

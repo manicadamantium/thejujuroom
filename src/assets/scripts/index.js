@@ -1,5 +1,5 @@
 import "./components/Dialog";
-import { $$ } from "./utilities/dom-helpers";
+import { $$, $ } from "./utilities/dom-helpers";
 import { ShoppingCartManager } from "./components/ShoppingCart";
 import { Inventory } from "./components/Inventory";
 
@@ -23,23 +23,46 @@ $$(".button").forEach((button) => {
   // via localStorage
   $$("[data-product-card]").forEach((card) => {
     const id = card.id;
-    const input = card.querySelector("input[data-update-cart]");
+    const productID = id;
+    const strDetails = localStorage.getItem(id);
 
-    if (input) {
-      input.value = localStorage.getItem(id) || 0;
-      handleEvent(input);
+    const form = document.querySelector(`[data-cart-product="${id}"]`);
+    form.addEventListener("input", (event) => {
+      console.log("INPUT EVENT", event.target);
+      const selectedVariant = form["selected-variant"]
+        ? form["selected-variant"].value
+        : null;
+      const quantity = form["quantity"].valueAsNumber;
+
+      const newItem = {
+        id: productID,
+        quantity,
+        variantID: selectedVariant,
+      };
+
+      window.shoppingCart.addItem(newItem);
+      localStorage.setItem(productID, JSON.stringify(newItem));
+
+      form
+        .closest("[data-product-card]")
+        .classList.toggle("selected", quantity > 0);
+
+      form.closest("[data-product-card]").dataset.quantity = quantity;
+    });
+
+    if (strDetails) {
+      const item = JSON.parse(strDetails);
+      console.log(item, form);
+
+      if (form["selected-variant"]) {
+        form["selected-variant"].value = item.variantID;
+      }
+      form["quantity"].value = item.quantity;
+      handleEvent(form["quantity"]);
+      window.shoppingCart.addItem(item);
     }
   });
 })();
-
-$$("[data-product-grid]").forEach((section) => {
-  section.addEventListener("input", (event) => {
-    if (event.target.matches("[data-update-cart]")) {
-      const input = event.target;
-      handleEvent(input);
-    }
-  });
-});
 
 function handleEvent(input) {
   const quantity = input.valueAsNumber;
@@ -51,16 +74,12 @@ function handleEvent(input) {
   }
 
   if (quantity > -1 && productID) {
-    window.shoppingCart.addItem({ id: productID, quantity });
-
     if (quantity > 0) {
       input.closest(".card").classList.add("selected");
       input.closest(".card").dataset.quantity = quantity;
-      localStorage.setItem(productID, quantity);
     } else {
       input.closest(".card").classList.remove("selected");
       delete input.closest(".card").dataset.quantity;
-      localStorage.removeItem(productID);
     }
   }
 }
@@ -75,7 +94,7 @@ document.getElementById("place-order").addEventListener("submit", (e) => {
     products: window.shoppingCart.products.filter(
       (item) => item.quantity && item.quantity > 0
     ),
-    shippingFee: window.shoppingCart.shippingFee
+    shippingFee: window.shoppingCart.shippingFee,
   };
 
   console.log({ submission });

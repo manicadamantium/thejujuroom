@@ -1,17 +1,30 @@
 <div class="card">
-    HELLOOOO
-  <img
-    src="{% src product.image.src %}"
-    srcset="{% srcset product.image.src %}"
-    alt="{{ product.image.alt }}"
-    class="card__image"
-  />
+  {% if product.image %}
+    <img src="{{ product.image }}" alt="{{ product.name }}">
+  {% endif %}
   <div class="card__body">
     <h3 class="h5">{{ product.name }}</h3>
-    <p>$ {{ product.price }}</p>
+    {% if product.description %}
+      <p>{{ product.description }}</p>
+    {% endif %}
+    {% if product.price %}
+      <p>$ {{ product.price }}</p>
+    {% endif %}
   </div>
-  <div class="card__footer flex gap-s padding-s justify-content-flex-end">
-    <label for="qty-{{product.id}}" class="no-stretch">Qty:</label>
-    <input value="0" class="no-stretch" type="number" name="qty-{{product.id}}" id="qty-{{product.id}}" min="0" max="10" style="width: 5ch;" data-update-cart="{{ product.id }}">
-  </div>
+  <form id="{{ product.id }}" class="card__footer">
+    {% if product.variants %}
+      <div class="cluster gap-s">
+        {% for variant in product.variants %}
+          <div class="checkable">
+            <input type="radio" name="variants-{{ product.id }}" id="{{ product.name }}-{{ loop.index }}">
+            <label for="{{ product.name }}-{{ loop.index }}"><b>{{ variant.name }}</b><br>{{ variant.price }}</label>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="flex gap-s padding-s justify-content-flex-end">
+      <label for="qty-{{product.id}}" class="no-stretch">Qty:</label>
+      <input value="0" class="no-stretch" type="number" name="qty-{{product.id}}" id="qty-{{product.id}}" min="0" max="10" style="width: 5ch;" data-update-cart="{{ product.id }}">
+    </div>
+  </form>
 </div>

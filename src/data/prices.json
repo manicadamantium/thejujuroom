@@ -1,0 +1,344 @@
+[
+  {
+    "id": "7676840457",
+    "name": "Blue Meanchie",
+    "image": "/assets/images/products/meanchie.png",
+    "variants": [
+      {
+        "id": "2060423308",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "8736893205",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "8863319617",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "6553408608",
+    "name": "Golden Teachers",
+    "variants": [
+      {
+        "id": "9303612435",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "9531766829",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "5533758776",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "7664859631",
+    "name": "Penis Envy",
+    "variants": [
+      {
+        "id": "8636632259",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "8905841640",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "3466464762",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "9048777716",
+    "name": "Bplus",
+    "variants": [
+      {
+        "id": "6132091767",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "3757668110",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "9846542995",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "1990801502",
+    "name": "Amazonian",
+    "variants": [
+      {
+        "id": "9775926321",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "2794880955",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "6181713045",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "3077873884",
+    "name": "Brazillian Hammers",
+    "variants": [
+      {
+        "id": "1954314068",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "3984829965",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "4871294381",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "8621734383",
+    "name": "Brazillian Gold Caps",
+    "variants": [
+      {
+        "id": "0022051667",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "5136927589",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "7101550421",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "4290055199",
+    "name": "Lil Mexican",
+    "variants": [
+      {
+        "id": "1385779538",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "4799566103",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "2637437940",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "5340778632",
+    "name": "Equadorian ",
+    "variants": [
+      {
+        "id": "5232647536",
+        "name": "3.5 G",
+        "price": 30.0
+      },
+      {
+        "id": "6385336510",
+        "name": "14 G",
+        "price": 70.0
+      },
+      {
+        "id": "7598084929",
+        "name": "28 G",
+        "price": 120.0
+      }
+    ]
+  },
+  {
+    "id": "0271799108",
+    "name": "Champignon",
+    "image": "/assets/images/products/champignon.png",
+    "variants": [
+      {
+        "id": "8436463928",
+        "name": "1.5 G",
+        "price": 15.0
+      },
+      {
+        "id": "2725310970",
+        "name": "3.5 G",
+        "price": 35.0
+      }
+    ]
+  },
+  {
+    "id": "9513456520",
+    "name": "Almond Roacha",
+    "image": "/assets/images/products/almond_roacha.png",
+    "variants": [
+      {
+        "id": "3064453490",
+        "name": "1.5 G",
+        "price": 15.0
+      },
+      {
+        "id": "5911284500",
+        "name": "3.5 G",
+        "price": 35.0
+      }
+    ]
+  },
+  {
+    "id": "5666181978",
+    "name": "Psilo Crisp",
+    "image": "/assets/images/products/psilo_crisp.png",
+    "variants": [
+      {
+        "id": "6572056990",
+        "name": "1.5 G",
+        "price": 15.0
+      },
+      {
+        "id": "8449765979",
+        "name": "3.5 G",
+        "price": 35.0
+      }
+    ]
+  },
+  {
+    "id": "5810766541",
+    "name": "Reapers",
+    "image": "/assets/images/products/reapers.png",
+    "variants": [
+      {
+        "id": "8964824528",
+        "name": "1.5 G",
+        "price": 15.0
+      },
+      {
+        "id": "3438271340",
+        "name": "3.5 G",
+        "price": 35.0
+      }
+    ]
+  },
+  {
+    "id": "9837453007",
+    "name": "Shroomie Smores",
+    "image": "/assets/images/products/shroomie_smores.png",
+    "variants": [
+      {
+        "id": "7379964019",
+        "name": "1.5 G",
+        "price": 15.0
+      },
+
+      {
+        "id": "5023961297",
+        "name": "3.5 G",
+        "price": 35.0
+      }
+    ]
+  },
+  {
+    "id": "8701933712",
+    "name": "Oh Mario!",
+    "image": "/assets/images/products/ohmario.png",
+    "variants": [
+      {
+        "id": "7273681115",
+        "name": "1.5 G",
+        "price": 15.0
+      },
+      {
+        "id": "1294498294",
+        "name": "3.5 G",
+        "price": 35.0
+      }
+    ]
+  },
+  {
+    "id": "1195887340",
+    "name": "Stars",
+    "image": "/assets/images/products/stars.png",
+    "variants": [
+      {
+        "id": "1923389072",
+        "name": "1.5 G",
+        "price": 15.0
+      },
+
+      {
+        "id": "9413176550",
+        "name": "3.5 G",
+        "price": 35.0
+      }
+    ]
+  },
+  {
+    "id": "5289887568",
+    "name": "Peanut Budda",
+    "image": "/assets/images/products/peanut_budda.png",
+    "price": 40.0
+  },
+  {
+    "id": "6199200100",
+    "name": "Mushtella",
+    "image": "/assets/images/products/mushtella.png",
+    "price": 80.0
+  },
+  {
+    "id": "1517300316",
+    "name": "Magic Mush Runts",
+    "image": "/assets/images/products/runts.png",
+    "price": 15.0
+  },
+  {
+    "id": "2684787039",
+    "name": "Nerds Rope",
+    "image": "/assets/images/products/rope.png",
+    "price": 15.0
+  },
+  {
+    "id": "8713125881",
+    "name": "Humble Healing",
+    "description": "30 mg, 10 candies per bag",
+    "image": "/assets/images/products/rope.png",
+    "price": 30.0
+  }
+]

@@ -25,4 +25,16 @@ function createElement(element) {
     return document.createElement(element)
 }
 
-export { $, $$, createElement }
+
+/**
+ * Removes all children from an HTMLElement
+ *
+ * @param {Node} node the parent element
+ */
+function removeAllChildren(node) {
+  while (node.lastChild) {
+    node.removeChild(node.lastChild);
+  }
+}
+
+export { $, $$, createElement, removeAllChildren };
