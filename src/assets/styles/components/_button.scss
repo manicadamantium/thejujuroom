@@ -24,6 +24,12 @@
     font-size: var(--type-size-7);
   }
 
+  &.primary {
+    background-color: hsl(var(--l-contrast));
+    color: hsl(var(--d-contrast));
+    border-color: hsl(var(--l-contrast));
+  }
+
   &::after,
   &::before {
     content: "";
