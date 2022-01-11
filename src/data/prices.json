@@ -1,8 +1,8 @@
 [
   {
     "id": "7676840457",
-    "name": "Blue Meanchie",
-    "image": "/assets/images/products/meanchie.png",
+    "name": "Blue Meanie",
+    "image": "/assets/images/products/blue_meanies.png",
     "variants": [
       {
         "id": "2060423308",
@@ -24,6 +24,7 @@
   {
     "id": "6553408608",
     "name": "Golden Teachers",
+    "image": "/assets/images/products/golden_teacher.png",
     "variants": [
       {
         "id": "9303612435",
@@ -45,6 +46,7 @@
   {
     "id": "7664859631",
     "name": "Penis Envy",
+    "image": "/assets/images/products/penis_envy.png",
     "variants": [
       {
         "id": "8636632259",
@@ -66,6 +68,7 @@
   {
     "id": "9048777716",
     "name": "Bplus",
+    "image": "/assets/images/products/b_plus.png",
     "variants": [
       {
         "id": "6132091767",
@@ -338,7 +341,7 @@
     "id": "8713125881",
     "name": "Humble Healing",
     "description": "30 mg, 10 candies per bag",
-    "image": "/assets/images/products/rope.png",
+    "image": "/assets/images/products/humble_healing.png",
     "price": 30.0
   }
 ]
