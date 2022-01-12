@@ -110,6 +110,7 @@
   {
     "id": "1990801502",
     "name": "Amazonian",
+    "image": "/assets/images/products/amazonian.png",
     "variants": [
       {
         "id": "9775926321",
@@ -136,6 +137,7 @@
   {
     "id": "3077873884",
     "name": "Brazillian Hammers",
+    "image": "/assets/images/products/brazillian_hammers.png",
     "variants": [
       {
         "id": "1954314068",
@@ -162,6 +164,7 @@
   {
     "id": "8621734383",
     "name": "Brazillian Gold Caps",
+    "image": "/assets/images/products/brazillian_gold_caps.png",
     "variants": [
       {
         "id": "0022051667",
@@ -188,6 +191,7 @@
   {
     "id": "4290055199",
     "name": "Lil Mexican",
+    "image": "/assets/images/products/little_mexicans.png",
     "variants": [
       {
         "id": "1385779538",
@@ -214,6 +218,7 @@
   {
     "id": "5340778632",
     "name": "Equadorian ",
+    "image": "/assets/images/products/equadorian.png",
     "variants": [
       {
         "id": "5232647536",
