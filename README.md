@@ -63,13 +63,6 @@ This site is built with [Eleventy](https://11ty.dev). This project is built to b
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
 1. Install dependencies
 ```bash
 npm install
